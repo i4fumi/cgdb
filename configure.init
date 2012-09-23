@@ -187,6 +187,8 @@ if test "$TERMCAP_LIB" != "-l$curses_lib_name"; then
   LIBS="-l$curses_lib_name $LIBS"
 fi
 
+AC_CHECK_LIB(ncursesw, initscr, [LIBS="-lncursesw $LIBS"])
+
 AC_OUTPUT(
     Makefile \
     lib/Makefile \
